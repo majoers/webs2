@@ -25,7 +25,7 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav navbar-right">
 
-<li><a href="/shopping-cart"><i class="fas fa-shopping-cart"></i> Shopping Cart <span class="badge">
+            <li><a class="nav-link" href="/shopping-cart"><i class="fas fa-shopping-cart"></i> Shopping Cart <span class="badge">
                             {{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span></a></li>
                 <li><a class="nav-link" href="/admin">Admin</a> </li>
                 <!-- Authentication Links -->
