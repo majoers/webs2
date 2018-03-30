@@ -20,3 +20,6 @@ Route::get('/about','HomeController@showAbout');
 Route::get('/product/{id}','ProductController@index');
 Route::get('/catalog','ProductController@showCatalog');
 Route::get('/contact','ContactController@index');
+Route::get('/shopping-cart','ShoppingCartController@getCart');
+Route::get('/add-to-cart/{id}', 'ShoppingCartController@getAddToCart');
+Route::get('/reduce/{id}', 'ShoppingCartController@getReduceByOne' );
