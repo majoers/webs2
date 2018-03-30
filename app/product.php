@@ -8,11 +8,11 @@ class product extends Model
 {
     public function genre()
     {
-        return $this->belongsTo('App\genre','genre','id');
+        return $this->belongsTo('App\genre');
     }
 
     public function category()
     {
-        return $this->belongsTo('App\category','categorie','id');
+        return $this->belongsTo('App\category');
     }
 }
