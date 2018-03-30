@@ -48,3 +48,8 @@ Route::get('/categories/store','CategoryController@store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/shopping-cart','ShoppingCartController@getCart');
+Route::get('/add-to-cart/{id}', 'ShoppingCartController@getAddToCart');
+Route::get('/reduce/{id}', 'ShoppingCartController@getReduceByOne' );
+

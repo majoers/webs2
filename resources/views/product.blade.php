@@ -16,7 +16,7 @@
                 <h2>{{$product->name}}</h2>
                 <h4>Genre: {{$product->genre->name}}</h4>
                 <h1>€ {{$product->price}}</h1>
-                <h2 ><a href="/product/{{$product->id}}" class="btn btn-warning">Add to Cart</a></h2>
+                <h2 ><a href="/add-to-cart/{{$product->id}}" class="btn btn-warning">Add to Cart</a></h2>
             </div>
         </div>
 
