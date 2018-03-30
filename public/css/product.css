@@ -1,8 +1,12 @@
-.productContainer {
+body {
+    margin-top: 88px;
+}
+
+.productHomeContainer {
     width: 300px;
 }
 
-.catalogImg {
+.homeScreenImg {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -26,6 +30,32 @@ height: 40px;
 
 }
 
+.productCatalogContainer {
+    width: 200px;
+}
+
+.catalogImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 200px;
+    object-fit: scale-down;
+}
+
+
+.dashboardImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 125px;
+    object-fit: scale-down;
+}
+
 .img-thumbnail{
     border: 0px;
 }
+
+
+
