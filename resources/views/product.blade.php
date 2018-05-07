@@ -5,7 +5,6 @@
     <div class="container">
 
         <div class="row">
-            {{$product}}
             <div class="col-md-6">
 
 

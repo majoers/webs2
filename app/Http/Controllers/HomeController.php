@@ -26,14 +26,9 @@ class HomeController extends Controller
      */
 
 
-   /* public function index()
-    {
-        return view('home');
-    }*/
-
     public function index()
     {
-        $products =  Product::take(6)->get();
+        $products =  Product::orderBy('id', 'DESC')->take(6)->get();
         return view('home',['products' => $products]);
     }
     public function showAbout()

@@ -44,7 +44,7 @@ class ProductSeeder extends Seeder
         ]);
 
         DB::table("products")->insert([
-            "categorie_id" => 1,
+            "category_id" => 1,
             "genre_id" => 2,
             "name" => "The Lord of the Rings",
             "description" => "a tale about a ring that must be destroyed in order to give peace to the world",
@@ -54,7 +54,7 @@ class ProductSeeder extends Seeder
     ]);
 
         DB::table("products")->insert([
-            "categorie_id" => 1,
+            "category_id" => 1,
             "genre_id" => 2,
             "name" => "Harry Potter and the chamber of secters",
             "description" => "a boy with a scar on his face must save hogwarts from a snake under the castle",
@@ -64,7 +64,7 @@ class ProductSeeder extends Seeder
     ]);
 
         DB::table("products")->insert([
-            "categorie_id" => 1,
+            "category_id" => 1,
             "genre_id" => 1,
             "name" => "Sherlock Holmes",
             "description" => "A man solves mysteries with his partner Watson",
@@ -74,7 +74,7 @@ class ProductSeeder extends Seeder
         ]);
 
         DB::table("products")->insert([
-            "categorie_id" => 2,
+            "category_id" => 2,
             "genre_id" => 3,
             "name" => "GTA 5",
             "description" => "You play as three dudes that shoot people, drive arround in fancy car and do more illigal stuff",
@@ -84,7 +84,7 @@ class ProductSeeder extends Seeder
         ]);
 
         DB::table("products")->insert([
-            "categorie_id" => 2,
+            "category_id" => 2,
             "genre_id" => 4,
             "name" => "Super Mario 64",
             "description" => "Princess invites plummer to caslte for cake. Princess get kidnapped. Plummer collects stars in order to save princess from big firebeating turtle guy.",
@@ -94,7 +94,7 @@ class ProductSeeder extends Seeder
         ]);
 
         DB::table("products")->insert([
-            "categorie_id" => 2,
+            "category_id" => 2,
             "genre_id" => 5,
             "name" => "Call of Duty",
             "description" => "Generic shooter where the developers were proud that they had fish AI in their 2010 game. This is not special since Super Mario 64, which is a 1996 game, had this as well.",
@@ -105,7 +105,7 @@ class ProductSeeder extends Seeder
 
 
         DB::table("products")->insert([
-            "categorie_id" => 3,
+            "category_id" => 3,
             "genre_id" => 2,
             "name" => "Inception",
             "description" => "There is a dream, limbo and more!",
@@ -115,7 +115,7 @@ class ProductSeeder extends Seeder
         ]);
 
         DB::table("products")->insert([
-            "categorie_id" => 3,
+            "category_id" => 3,
             "genre_id" => 2,
             "name" => "Pirates of the Carrabean",
             "description" => "Pirate, Jack Spearow, and more",
@@ -125,7 +125,7 @@ class ProductSeeder extends Seeder
         ]);
 
         DB::table("products")->insert([
-            "categorie_id" => 3,
+            "category_id" => 3,
             "genre_id" => 2,
             "name" => "The Matrix",
             "description" => "Walls are very breakable!",

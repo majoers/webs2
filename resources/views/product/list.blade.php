@@ -2,6 +2,35 @@
 @section('title','Product List')
 @section('content')
 
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <table class="table">
+
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image name</th>
+                <th>Genre</th>
+                <th>Category</th>
+                <th></th>
+                <th></th>
+                @foreach($products as $product)
+                    <tr>
+                        <td>{{$product->name}}</td>
+                        <td>€ {{$product->price}}</td>
+                        <td>{{$product->image}}</td>
+                        <td>{{$product->genre->name}}</td>
+                        <td>{{$product->category->name}}</td>
+                        <td><a href="/products/edit/{{$product->id}}" class="btn btn-warning">Edit</a></td>
+                        <td><a class="btn btn-danger">Delete</a></td>
+                    </tr>
+
+                @endforeach
+            </table>
+
+
+        </div>
+    </div>
 
 
 
