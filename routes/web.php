@@ -56,4 +56,4 @@ Route::get('/shopping-cart','ShoppingCartController@getCart');
 Route::get('/add-to-cart/{id}', 'ShoppingCartController@getAddToCart');
 Route::get('/reduce/{id}', 'ShoppingCartController@getReduceByOne' );
 Route::get('/remove/{id}', 'ShoppingCartController@getRemoveItem' );
-
+Route::get('/checkout', 'ShoppingCartController@postCheckout' );

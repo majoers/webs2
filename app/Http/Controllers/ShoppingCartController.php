@@ -61,4 +61,10 @@ class ShoppingCartController extends Controller
         }
         return view('shopping-cart' , ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
+
+    public function postCheckout(){
+        Session::forget('cart');
+        $products =  Product::orderBy('id', 'DESC')->take(6)->get();
+        return view('home',['products' => $products])->with('success', 'Successfully purchased');
+    }
 }

@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('title','Home')
 @section('content')
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <div class="alert alert-success">
+            {{\Illuminate\Support\Facades\Session::get('success')}}
+        </div>
+    @endif
     <div class="container">
         <div class="row">
             @foreach($products as $product)

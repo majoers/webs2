@@ -30,7 +30,7 @@
         <hr>
         <div class="row">
             <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                <button type="button" class="btn btn-success">Checkout</button>
+                <h2><a href="/checkout" class="btn btn-warning">checkout</a></h2>
 
             </div>
         </div>
