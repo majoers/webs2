@@ -57,9 +57,11 @@ class ProductController extends Controller
         return view('product.update', ['product' => Product::where('id', $id)->get()->first(), 'genres' => $genres, 'categories' => $categories]);
     }
 
-    public function showDelete($id)
+    public function delete($id)
     {
-
+        $product = product::where('id',$id)->get()->first();
+        $product->delete();
+        return redirect('/products/list');
     }
 
     public function store(StoreProduct $request)

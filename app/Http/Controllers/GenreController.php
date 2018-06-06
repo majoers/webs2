@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreGenre;
 use App\genre;
+use App\product;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller
@@ -25,8 +26,18 @@ class GenreController extends Controller
         return view('genre.update', ['genre' => Genre::where('id', $id)->get()->first()]);
     }
 
-    public function showDelete()
+    public function delete($id)
     {
+        $productsWithGenre = product::where('genre_id',$id)->count();
+        $genre = genre::where('id', $id)->get()->first();
+        if($productsWithGenre <= 0) {
+            $genre = genre::where('id', $id)->get()->first();
+            $genre->delete();
+            return redirect('/genres/list');
+        } else{
+
+            return redirect('/genres/list')->withErrors("Can't delete the genre \"" . $genre->name . "\". Genre is linked to " . $productsWithGenre . " product(s)");
+        }
 
     }
 
