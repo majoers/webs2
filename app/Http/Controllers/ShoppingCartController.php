@@ -29,7 +29,11 @@ class ShoppingCartController extends Controller
         $cart = new Cart($oldCart);
 
         $cart->reduceByOne($id);
-        Session::put('cart', $cart);
+        if (count($cart->items) > 0){
+            Session::put('cart', $cart);
+        }else{
+            Session::forget('cart');
+        }
 
         return view('shopping-cart' , ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
 
@@ -44,4 +48,17 @@ class ShoppingCartController extends Controller
     $cart = new Cart($oldCart);
     return view('shopping-cart' , ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
 }
+
+    public function getRemoveItem($id)
+    {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
+        if (count($cart->items) > 0){
+            Session::put('cart', $cart);
+    }else{
+            Session::forget('cart');
+        }
+        return view('shopping-cart' , ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+    }
 }

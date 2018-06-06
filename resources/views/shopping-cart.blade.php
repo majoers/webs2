@@ -13,8 +13,8 @@
                             <div class="btn-group">
                                 <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span> </button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/reduce/{id}"> Reduce by 1 </a></li>
-                                    <li><a href="#"> Reduce All</a></li>
+                                    <li><a href="/reduce/{{$product['item']->id}}"> Reduce by 1 </a></li>
+                                    <li><a href="/remove/{{$product['item']->id}}"> Reduce All </a></li>
                                 </ul>
             </div>
             </li>
