@@ -37,6 +37,19 @@ class ProductController extends Controller
         return view('catalog', ['products' => $products, 'genres' => $genres, 'categories' => $categories]);
     }
 
+    public function searchItem(Request $request){
+        $genres = genre::all();
+        $categories = category::all();
+            if ($request->get('q') != null && $request->get('q') != "") {
+                $input = $request->get('q');
+                $products = Product::where('name', 'LIKE', '%' . $input . "%")->get();
+                return view('catalog', ['products' => $products, 'genres' => $genres, 'categories' => $categories]);
+            } else {
+                return back();
+            }
+
+        }
+
     public function showList()
     {
         $products = Product::with('genre', 'category')->get();

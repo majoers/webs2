@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -38,7 +39,16 @@ class HomeController extends Controller
 
     public function showAdmin()
     {
-        return view('dashboard');
+        $user = Auth::user();
+            if ($user != null && $user->authority == 'admin') {
+                return view('dashboard');
+        }else{
+              return back();
+            }
+    }
+
+    public function search(){
+
     }
 
 

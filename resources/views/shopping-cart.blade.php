@@ -11,7 +11,7 @@
                             <strong> {{$product['item']['name']}} </strong>
                             <span class="label label-success"> {{$product['price']}}</span>
                             <div class="btn-group">
-                                <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span> </button>
+                                <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">Action </span> </button>
                                 <ul class="dropdown-menu">
                                     <li><a href="/reduce/{{$product['item']->id}}"> Reduce by 1 </a></li>
                                     <li><a href="/remove/{{$product['item']->id}}"> Reduce All </a></li>

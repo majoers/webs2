@@ -23,7 +23,9 @@ Route::get('/about','HomeController@showAbout');
 Route::get('/product/{id}','ProductController@detail');
 Route::get('/catalog','ProductController@showCatalog');
 Route::post('/catalog/filter','ProductController@showCatalogFilter');
-
+Route::get('/catalog/filter', 'ProductController@showCatalog');
+Route::post('/search', 'ProductController@searchItem');
+Route::get('/search', 'ProductController@showCatalog');
 Route::get('/admin','HomeController@showAdmin');
 
 Route::get('/products/list','ProductController@showList');
@@ -57,3 +59,4 @@ Route::get('/add-to-cart/{id}', 'ShoppingCartController@getAddToCart');
 Route::get('/reduce/{id}', 'ShoppingCartController@getReduceByOne' );
 Route::get('/remove/{id}', 'ShoppingCartController@getRemoveItem' );
 Route::get('/checkout', 'ShoppingCartController@postCheckout' );
+
