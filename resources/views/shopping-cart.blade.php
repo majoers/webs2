@@ -15,6 +15,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="/reduce/{{$product['item']->id}}"> Reduce by 1 </a></li>
                                     <li><a href="/remove/{{$product['item']->id}}"> Reduce All </a></li>
+                                    <li><a href="/add/{{$product['item']->id}}"> Add by 1 </a></li>
                                 </ul>
             </div>
             </li>
