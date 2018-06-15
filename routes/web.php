@@ -36,12 +36,12 @@ Route::post('/products/store','ProductController@store');
 Route::post('/products/storeEdit','ProductController@storeEdit');
 
 
-Route::get('/genres/list','GenreController@showList');
-Route::get('/genres/add','GenreController@showCreate');
-Route::get('/genres/edit/{id}','GenreController@showUpdate');
-Route::get('/genres/delete/{id}','GenreController@delete');
-Route::post('/genres/store','GenreController@store');
-Route::post('/genres/storeEdit','GenreController@storeEdit');
+Route::get('/subcategories/list','SubCategoryController@showList');
+Route::get('/subcategories/add','SubCategoryController@showCreate');
+Route::get('/subcategories/edit/{id}','SubCategoryController@showUpdate');
+Route::get('/subcategories/delete/{id}','SubCategoryController@delete');
+Route::post('/subcategories/store','SubCategoryController@store');
+Route::post('/subcategories/storeEdit','SubCategoryController@storeEdit');
 
 Route::get('/categories/list','CategoryController@showList');
 Route::get('/categories/add','CategoryController@showCreate');

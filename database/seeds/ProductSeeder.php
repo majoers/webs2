@@ -11,23 +11,23 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("genres")->insert([
+        DB::table("subcategories")->insert([
                "name"=>"Detective"
         ]);
 
-        DB::table("genres")->insert([
+        DB::table("subcategories")->insert([
             "name"=>"Adventure"
         ]);
 
-        DB::table("genres")->insert([
+        DB::table("subcategories")->insert([
             "name"=>"Open world"
         ]);
 
-        DB::table("genres")->insert([
+        DB::table("subcategories")->insert([
             "name"=>"Platformer"
         ]);
 
-        DB::table("genres")->insert([
+        DB::table("subcategories")->insert([
             "name"=>"First-person shooter"
         ]);
 
@@ -45,7 +45,7 @@ class ProductSeeder extends Seeder
 
         DB::table("products")->insert([
             "category_id" => 1,
-            "genre_id" => 2,
+            "subcategory_id" => 2,
             "name" => "The Lord of the Rings",
             "description" => "a tale about a ring that must be destroyed in order to give peace to the world",
             "price" => 25.99,
@@ -55,7 +55,7 @@ class ProductSeeder extends Seeder
 
         DB::table("products")->insert([
             "category_id" => 1,
-            "genre_id" => 2,
+            "subcategory_id" => 2,
             "name" => "Harry Potter and the chamber of secters",
             "description" => "a boy with a scar on his face must save hogwarts from a snake under the castle",
             "price" => 45.99,
@@ -65,7 +65,7 @@ class ProductSeeder extends Seeder
 
         DB::table("products")->insert([
             "category_id" => 1,
-            "genre_id" => 1,
+            "subcategory_id" => 1,
             "name" => "Sherlock Holmes",
             "description" => "A man solves mysteries with his partner Watson",
             "price" => 15.59,
@@ -75,7 +75,7 @@ class ProductSeeder extends Seeder
 
         DB::table("products")->insert([
             "category_id" => 2,
-            "genre_id" => 3,
+            "subcategory_id" => 3,
             "name" => "GTA 5",
             "description" => "You play as three dudes that shoot people, drive arround in fancy car and do more illigal stuff",
             "price" => 59.99,
@@ -85,7 +85,7 @@ class ProductSeeder extends Seeder
 
         DB::table("products")->insert([
             "category_id" => 2,
-            "genre_id" => 4,
+            "subcategory_id" => 4,
             "name" => "Super Mario 64",
             "description" => "Princess invites plummer to caslte for cake. Princess get kidnapped. Plummer collects stars in order to save princess from big firebeating turtle guy.",
             "price" => 25.99,
@@ -95,7 +95,7 @@ class ProductSeeder extends Seeder
 
         DB::table("products")->insert([
             "category_id" => 2,
-            "genre_id" => 5,
+            "subcategory_id" => 5,
             "name" => "Call of Duty",
             "description" => "Generic shooter where the developers were proud that they had fish AI in their 2010 game. This is not special since Super Mario 64, which is a 1996 game, had this as well.",
             "price" => 0.59,
@@ -106,7 +106,7 @@ class ProductSeeder extends Seeder
 
         DB::table("products")->insert([
             "category_id" => 3,
-            "genre_id" => 2,
+            "subcategory_id" => 2,
             "name" => "Inception",
             "description" => "There is a dream, limbo and more!",
             "price" => 54.99,
@@ -116,7 +116,7 @@ class ProductSeeder extends Seeder
 
         DB::table("products")->insert([
             "category_id" => 3,
-            "genre_id" => 2,
+            "subcategory_id" => 2,
             "name" => "Pirates of the Carrabean",
             "description" => "Pirate, Jack Spearow, and more",
             "price" => 15.99,
@@ -126,7 +126,7 @@ class ProductSeeder extends Seeder
 
         DB::table("products")->insert([
             "category_id" => 3,
-            "genre_id" => 2,
+            "subcategory_id" => 2,
             "name" => "The Matrix",
             "description" => "Walls are very breakable!",
             "price" => 0.59,

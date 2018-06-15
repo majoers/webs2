@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Genre List')
+@section('title','Subcategory List')
 @section('content')
 
     <div class="container">
@@ -15,17 +15,17 @@
                         </ul>
                     </div>
                 @endif
-                <h3>Genre List</h3>
+                <h3>Subcategory List</h3>
             <table class="table">
 
                 <th>Name</th>
                 <th></th>
                 <th></th>
-                @foreach($genres as $genre)
+                @foreach($subcategories as $subcategory)
                     <tr>
-                        <td>{{$genre->name}}</td>
-                        <td><a href="/genres/edit/{{$genre->id}}" class="btn btn-warning">Edit</a></td>
-                        <td><a href="/genres/delete/{{$genre->id}}" class="btn btn-danger">Delete</a></td>
+                        <td>{{$subcategory->name}}</td>
+                        <td><a href="/subcategories/edit/{{$subcategory->id}}" class="btn btn-warning">Edit</a></td>
+                        <td><a href="/subcategories/delete/{{$subcategory->id}}" class="btn btn-danger">Delete</a></td>
                     </tr>
                 @endforeach
             </table>

@@ -1,12 +1,12 @@
 @extends('layouts.app')
-@section('title','Add Genre')
+@section('title','Add Subcategory')
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        Add Genre
+                        Add Subcategory
                     </div>
                     <div class="card-body">
                         @if ($errors->any())
@@ -18,7 +18,7 @@
                                 </ul>
                             </div>
                         @endif
-                        <form method="post" action="/genres/store" enctype="multipart/form-data">
+                        <form method="post" action="/subcategories/store" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">

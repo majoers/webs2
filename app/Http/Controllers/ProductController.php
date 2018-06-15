@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\category;
-use App\genre;
+use App\subcategory;
 use App\Http\Requests\StoreProduct;
 use App\Product;
 use Illuminate\Http\Request;
@@ -12,38 +12,38 @@ class ProductController extends Controller
 {
     public function detail($id)
     {
-        return view('product', ['product' => Product::with('genre')->get()->where('id', $id)->first()]);
+        return view('product', ['product' => Product::with('subcategory')->get()->where('id', $id)->first()]);
     }
 
     public function showCatalog()
     {
-        $genres = genre::all();
+        $subcategories = subcategory::all();
         $categories = category::all();
         $products = Product::all();
-        return view('catalog', ['products' => $products, 'genres' => $genres, 'categories' => $categories]);
+        return view('catalog', ['products' => $products, 'subcategories' => $subcategories, 'categories' => $categories]);
     }
 
     public function showCatalogFilter(Request $request)
     {
-        $genres = genre::all();
+        $subcategories = subcategory::all();
         $categories = category::all();
         $products = Product::all();
         if ($request->get('category') > 0) {
             $products = $products->where('category_id', '=', $request->get('category'));
         }
-        if ($request->get('genre') > 0) {
-            $products = $products->where('genre_id', '=', $request->get('genre'));
+        if ($request->get('subcategory') > 0) {
+            $products = $products->where('subcategory_id', '=', $request->get('subcategory'));
         }
-        return view('catalog', ['products' => $products, 'genres' => $genres, 'categories' => $categories]);
+        return view('catalog', ['products' => $products, 'subcategories' => $subcategories, 'categories' => $categories]);
     }
 
     public function searchItem(Request $request){
-        $genres = genre::all();
+        $subcategories = subcategory::all();
         $categories = category::all();
             if ($request->get('q') != null && $request->get('q') != "") {
                 $input = $request->get('q');
                 $products = Product::where('name', 'LIKE', '%' . $input . "%")->get();
-                return view('catalog', ['products' => $products, 'genres' => $genres, 'categories' => $categories]);
+                return view('catalog', ['products' => $products, 'subcategories' => $subcategories, 'categories' => $categories]);
             } else {
                 return back();
             }
@@ -52,22 +52,22 @@ class ProductController extends Controller
 
     public function showList()
     {
-        $products = Product::with('genre', 'category')->get();
+        $products = Product::with('subcategory', 'category')->get();
         return view('product.list', ['products' => $products,]);
     }
 
     public function showCreate()
     {
-        $genres = genre::all();
+        $subcategories = subcategory::all();
         $categories = category::all();
-        return view('product.create', ['genres' => $genres, 'categories' => $categories]);
+        return view('product.create', ['subcategories' => $subcategories, 'categories' => $categories]);
     }
 
     public function showUpdate($id)
     {
-        $genres = genre::all();
+        $subcategories = subcategory::all();
         $categories = category::all();
-        return view('product.update', ['product' => Product::where('id', $id)->get()->first(), 'genres' => $genres, 'categories' => $categories]);
+        return view('product.update', ['product' => Product::where('id', $id)->get()->first(), 'subcategories' => $subcategories, 'categories' => $categories]);
     }
 
     public function delete($id)
@@ -87,7 +87,7 @@ class ProductController extends Controller
         } else {
             $product->image = "no_image.png";
         }
-        $product->genre_id = $request->get('genre');
+        $product->subcategory_id = $request->get('subcategory');
         $product->category_id = $request->get('category');
         $product->name = $request->get('name');
 
@@ -105,7 +105,7 @@ class ProductController extends Controller
             $imageName = strtolower(str_replace(" ", "", $request->get('name'))) . "." . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path('css/img'), $imageName);
         }
-        $product->genre_id = $request->get('genre');
+        $product->subcategory_id = $request->get('subcategory');
         $product->category_id = $request->get('category');
         $product->name = $request->get('name');
         $product->image = $imageName;

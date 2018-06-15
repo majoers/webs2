@@ -41,22 +41,22 @@
 
                     <div class="card-header">
 
-                        <h2 >Genre</h2>
+                        <h2 >Subcategory</h2>
 
                     </div>
 
 
                     <div class="card-body  bg-light">
                         <div class="col-xs-6">
-                            <a class="btn btn-light" href="/genres/list">
+                            <a class="btn btn-light" href="/subcategories/list">
                                 <img class="dashboardImg" src="{{asset('css/img/list.png')}}">
-                                <h3 class="text-center">Genre List</h3>
+                                <h3 class="text-center">Subcategory List</h3>
                             </a>
                         </div>
                         <div class="col-xs-6">
-                            <a class="btn btn-light" href="/genres/add">
+                            <a class="btn btn-light" href="/subcategories/add">
                                 <img class="dashboardImg" src="{{asset('css/img/add.png')}}">
-                                <h3 class="text-center">Add Genre</h3>
+                                <h3 class="text-center">Add Subcategory</h3>
                             </a>
                         </div>
 
