@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Update Genre')
+@section('title','Update Subcategory')
 @section('content')
     <div class="container">
 
@@ -8,7 +8,7 @@
                 <div class="card">
 
                     <div class="card-header">
-                        Update Genre
+                        Update Subcategory
                     </div>
                     <div class="card-body">
                         @if ($errors->any())
@@ -20,15 +20,15 @@
                                 </ul>
                             </div>
                         @endif
-                        <form method="post" action="/genres/storeEdit" enctype="multipart/form-data">
+                        <form method="post" action="/subcategories/storeEdit" enctype="multipart/form-data">
                             {{csrf_field()}}
-                            <input type="hidden" name="id" value="{{$genre->id}}">
+                            <input type="hidden" name="id" value="{{$subcategory->id}}">
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">
                                     Name
                                 </label>
                                 <div class="col-md-6">
-                                    <input value="{{$genre->name}}"  type="text" name="name" class="form-control">
+                                    <input value="{{$subcategory->name}}"  type="text" name="name" class="form-control">
                                 </div>
                             </div>
 

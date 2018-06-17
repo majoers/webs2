@@ -55,24 +55,24 @@
 
 
                         <h4 class="card-title">
-                            Genre
+                            Subcategory
                         </h4>
                             <div class="row">
                             <div class="form-check">
                                 <input id="radiobutton0" class="form-check-input" type="radio"
-                                       name="genre" value="0" checked="selected">
+                                       name="subcategory" value="0" checked="selected">
                                 <label for="radiobutton0" class="form-check-label fixPadding">
                                     No filter
                                 </label>
                             </div>
                             </div>
-                            @foreach($genres as $genre)
+                            @foreach($subcategories as $subcategory)
                                 <div class="row">
                                     <div class="form-check">
-                                        <input id="radiobutton{{$genre->id}}" class="form-check-input" type="radio"
-                                               name="genre" value="{{$genre->id}}">
-                                        <label for="radiobutton{{$genre->id}}"
-                                               class="form-check-label fixPadding">{{$genre->name}}
+                                        <input id="radiobutton{{$subcategory->id}}" class="form-check-input" type="radio"
+                                               name="subcategory" value="{{$subcategory->id}}">
+                                        <label for="radiobutton{{$subcategory->id}}"
+                                               class="form-check-label fixPadding">{{$subcategory->name}}
                                         </label>
                                     </div>
                                 </div>

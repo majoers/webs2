@@ -32,18 +32,7 @@
                                 </div>
 
                             </div>
-                            <div class="form-group row">
-                                <label for="genre" class="col-md-4 col-form-label text-md-right">
-                                    Genre
-                                </label>
-                                <div class="col-md-6">
-                                    <select name="genre" class="form-control" >
-                                        @foreach($genres as $genre)
-                                            <option @if($product->genre->id == $genre->id) selected @endif  value="{{$genre->id}}">{{$genre->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
+
 
                             <div class="form-group row">
                                 <label for="category" class="col-md-4 col-form-label text-md-right">
@@ -59,6 +48,19 @@
                                     </select>
                                 </div>
 
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="subcategory" class="col-md-4 col-form-label text-md-right">
+                                    Subcategory
+                                </label>
+                                <div class="col-md-6">
+                                    <select name="subcategory" class="form-control" >
+                                        @foreach($subcategories as $subcategory)
+                                            <option @if($product->subcategory->id == $subcategory->id) selected @endif  value="{{$subcategory->id}}">{{$subcategory->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
 
                             <div class="form-group row">

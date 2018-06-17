@@ -25,7 +25,7 @@ class StoreProduct extends FormRequest
     {
         return [
             'name' => 'required|string|max:100',
-            'genre' => 'required|string|max:100',
+            'subcategory' => 'required|string|max:100',
             'category' => 'required|string',
             'description' => 'required|string',
             'image' => 'image|mimes:jpeg,jpg,png,gif|max:2048',
@@ -36,7 +36,7 @@ class StoreProduct extends FormRequest
     public function messages()
     {
         return ['name.required' =>'The product name can\'t be empty',
-            'genre.required' =>'The product genre can\'t be empty',
+            'subcategory.required' =>'The product subcategory can\'t be empty',
             'category.required ' => 'The product category can\'t be empty',
             'description.required' => 'The product description can\'t be empty',
             'price.required' => 'The product price can\'t be empty'];

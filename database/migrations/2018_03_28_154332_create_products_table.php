@@ -17,8 +17,8 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->integer('category_id')->unsigned();
             $table->foreign("category_id")->references('id')->on('categories');
-            $table->integer('genre_id')->unsigned();
-            $table->foreign("genre_id")->references('id')->on('genres');
+            $table->integer('subcategory_id')->unsigned();
+            $table->foreign("subcategory_id")->references('id')->on('subcategories');
             $table->string('name');
             $table->string('image');
             $table->longText('description');
