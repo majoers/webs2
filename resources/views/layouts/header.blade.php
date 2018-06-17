@@ -27,14 +27,19 @@
 
             <li><a class="nav-link" href="/shopping-cart"><i class="fas fa-shopping-cart"></i> Shopping Cart <span class="badge">
                             {{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span></a></li>
-                <li><a class="nav-link" href="/admin">Admin</a> </li>
+
+
+
+
+
                 <!-- Authentication Links -->
                 @guest
+
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                     <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                 @else
 
-
+                    <li><a class="nav-link" href="/admin">Admin</a> </li>
                     <li class="nav-item dropdown">
                          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}

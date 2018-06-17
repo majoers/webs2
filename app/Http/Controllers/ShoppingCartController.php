@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Product;
 use App\Cart;
+use Illuminate\Support\Facades\Auth;
+
 
 class ShoppingCartController extends Controller
 {
@@ -24,17 +26,20 @@ class ShoppingCartController extends Controller
         $cart = new Cart($oldCart);
         return view('shopping-cart' , ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
+
     public function getReduceByOne($id){
         $oldCart = Session::has('cart') ? Session::get('cart') : null ;
         $cart = new Cart($oldCart);
+        if($cart->items[$id]['qty'] > 0 ) {
+            $cart->reduceByOne($id);
 
-        $cart->reduceByOne($id);
-        if (count($cart->items) > 0){
-            Session::put('cart', $cart);
-        }else{
-            Session::forget('cart');
+            if (count($cart->items) > 0) {
+                Session::put('cart', $cart);
+            } else {
+                Session::forget('cart');
+            }
         }
-        return view('shopping-cart' , ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+            return view('shopping-cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
 
     public function getAddByOne($id){
@@ -61,18 +66,26 @@ class ShoppingCartController extends Controller
     {
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
-        $cart->removeItem($id);
-        if (count($cart->items) > 0){
-            Session::put('cart', $cart);
-    }else{
-            Session::forget('cart');
+        if($cart->items[$id]['qty'] > 0 ) {
+            $cart->removeItem($id);
+            if (count($cart->items) > 0) {
+                Session::put('cart', $cart);
+            } else {
+                Session::forget('cart');
+            }
         }
         return view('shopping-cart' , ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
 
     public function postCheckout(){
-        Session::forget('cart');
         $products =  Product::orderBy('id', 'DESC')->take(6)->get();
-        return view('home',['products' => $products])->with('success', 'Successfully purchased');
+        $user = Auth::user();
+        if ($user != null) {
+            Session::forget('cart');
+            return view('home',['products' => $products])->with('success', 'Successfully purchased');
+        }else{
+            return view('auth.login');
+        }
+
     }
 }
